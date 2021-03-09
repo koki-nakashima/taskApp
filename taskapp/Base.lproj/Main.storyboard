@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Kq-HQ-ALr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="142" width="414" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="x3Q-EK-k0n" detailTextLabel="EAU-QD-Hj9" style="IBUITableViewCellStyleSubtitle" id="7E6-7z-7LS">
@@ -46,13 +46,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-aH-kEI">
+                                <rect key="frame" x="10" y="98" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Kq-HQ-ALr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5he-b5-mae"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ggy-aH-kEI" secondAttribute="trailing" constant="10" id="9I7-0H-rJL"/>
                             <constraint firstItem="6Kq-HQ-ALr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kue-u4-c7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Kq-HQ-ALr" secondAttribute="trailing" id="R72-tN-RwO"/>
+                            <constraint firstItem="ggy-aH-kEI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hji-tJ-TFL"/>
+                            <constraint firstItem="6Kq-HQ-ALr" firstAttribute="top" secondItem="ggy-aH-kEI" secondAttribute="bottom" constant="10" id="jJZ-fP-PtZ"/>
+                            <constraint firstItem="ggy-aH-kEI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pJi-Ct-e8E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Kq-HQ-ALr" secondAttribute="bottom" id="pfY-fe-x0d"/>
                         </constraints>
                     </view>
@@ -64,7 +72,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="TableView" destination="6Kq-HQ-ALr" id="8qg-om-gLg"/>
+                        <outlet property="tableView" destination="6Kq-HQ-ALr" id="sxc-CT-EYM"/>
+                        <outlet property="textber" destination="ggy-aH-kEI" id="98m-fS-Ezi"/>
                         <segue destination="hlo-jV-oDC" kind="show" identifier="cellSegue" id="lg7-Jk-8MH"/>
                     </connections>
                 </viewController>
@@ -114,6 +123,19 @@
                                     <constraint firstAttribute="height" constant="120" id="T2j-YA-skE"/>
                                 </constraints>
                             </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-1B-2hX">
+                                <rect key="frame" x="114" y="536" width="182" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiX-mk-087">
+                                <rect key="frame" x="173" y="498" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BNI-Tp-h3g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,6 +161,7 @@
                     <connections>
                         <outlet property="contentsTextView" destination="wAr-7M-tzC" id="Tvb-fh-40K"/>
                         <outlet property="datePicker" destination="YdO-Fo-HAU" id="ctQ-fP-EKc"/>
+                        <outlet property="textber" destination="SG4-1B-2hX" id="YbG-HA-VzA"/>
                         <outlet property="titleTextField" destination="hZV-bC-9rY" id="YGN-QC-cJ8"/>
                     </connections>
                 </viewController>
